@@ -55,7 +55,7 @@ export default function Feed() {
 
           {/* Activity Items */}
           <div className="space-y-8">
-            {feedActivities.map((activity, index) => {
+            {feedActivities.reverse().map((activity, index) => {
               const Icon = activityIcons[activity.type as keyof typeof activityIcons] || activityIcons.default;
               const colorClass = activityColors[activity.type as keyof typeof activityColors] || activityColors.default;
 

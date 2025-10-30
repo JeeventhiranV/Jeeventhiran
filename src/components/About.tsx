@@ -5,10 +5,12 @@
  */
 
 import { motion } from 'framer-motion';
-import { personalInfo, experience } from '@/data/portfolio';
+import { personalInfo, experiences } from '@/data/portfolio';
 import { Code2, Database, Layers, Zap } from 'lucide-react';
 import { calculateExperience } from '@/lib/utils';
-
+const currentExperience =
+  experiences.find((exp) => !exp.endDate) ||
+  experiences.sort((a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime())[0];
 // Highlight cards data
 const highlights = [
   {
@@ -54,23 +56,42 @@ export function About() {
 
         <div className="max-w-6xl mx-auto">
           {/* Main about content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="glass rounded-2xl p-8 md:p-12 mb-12 shadow-card"
-          >
-            <p className="text-lg text-foreground leading-relaxed mb-6">
-              {personalInfo.about}
-            </p>
-            <p className="text-md text-muted-foreground leading-relaxed">
-              Currently working at <span className="font-semibold text-primary">{experience.company}</span> as a {experience.role}, 
-              I specialize in developing robust backend systems, optimizing database performance, and integrating 
-              third-party services to deliver comprehensive solutions. My expertise spans across the entire development 
-              lifecycle, from requirement analysis to deployment and maintenance.
-            </p>
-          </motion.div>
+        <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  viewport={{ once: true }}
+  className="glass rounded-2xl p-8 md:p-12 mb-12 shadow-card"
+>
+  {/* About paragraph */}
+  <p className="text-lg text-foreground leading-relaxed mb-6">
+    {personalInfo.about}
+  </p>
+
+  {/* Dynamic Current Job paragraph */}
+  {currentExperience && (
+    <p className="text-md text-muted-foreground leading-relaxed">
+      Currently working at{" "}
+      <a
+        href={currentExperience.companyWebsite}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-primary hover:underline"
+      >
+        {currentExperience.company}
+      </a>{" "}
+      as a{" "}
+      <span className="font-semibold text-foreground">
+        {currentExperience.role}
+      </span>
+      , I specialize in developing robust backend systems, optimizing database
+      performance, and integrating third-party services to deliver comprehensive
+      solutions. My expertise spans across the entire development lifecycle,
+      from requirement analysis to deployment and maintenance.
+    </p>
+  )}
+</motion.div>
+
 
           {/* Highlight cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

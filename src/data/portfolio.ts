@@ -5,7 +5,8 @@
  * Edit this file to update content without touching component code.
  */
 // ---- Experience Calculation Function ----
-import { calculateExperience } from "../lib/utils";
+import { calculateExperience,calculateDuration } from "../lib/utils";
+
 // Personal Information 
 export const personalInfo = {
   name: "JEEVENTHIRAN V",
@@ -85,56 +86,65 @@ export const technicalSkills = {
 };
 
 // Work Experience
-export const experience = {
-  company: "Uncia Technologies Pvt. Ltd.",
-  role: "Java Developer",
-  duration: "August 2021 - Present",
-  yearsOfExperience: calculateExperience(),
-  location: "Chennai, Tamil Nadu",
-  companyWebsite: "https://www.uncia.com",
-  responsibilities: [
-    {
-      title: "Full-Stack Development",
-      description: "Developed and maintained enterprise Java web applications using Spring MVC, JSP, and MSSQL, serving thousands of users daily."
-    },
-    {
-      title: "Database Optimization",
-      description: "Designed complex MSSQL queries and stored procedures, achieving 30% faster response times through strategic indexing and query optimization."
-    },
-    {
-      title: "API Development & Integration",
-      description: "Built robust RESTful APIs and successfully integrated 10+ third-party services including payment gateways, KYC verification, and credit scoring systems."
-    },
-    {
-      title: "Frontend Enhancement",
-      description: "Enhanced user interfaces with JavaScript and jQuery, improving user experience and reducing page load times by 25%."
-    },
-    {
-      title: "Performance Tuning",
-      description: "Conducted thorough code reviews, performance testing with JMeter, and implemented caching strategies resulting in improved application scalability."
-    },
-    {
-      title: "Agile Collaboration",
-      description: "Collaborated with cross-functional teams using Azure DevOps for project management, ensuring timely delivery of features through sprint-based development."
-    }
-  ],
-
-  achievements: [
-    "Reduced database query response time by 30%",
-    "Successfully integrated 10+ third-party services",
-    "Improved application performance by 25%",
-    "Led migration of legacy codebase to modern architecture"
-  ]
-};
+export const experiences = [
+  {
+    id: 1,
+    company: "Uncia Technologies Pvt. Ltd.",
+    role: "Senior Technical Developer",
+    location: "Chennai, Tamil Nadu",
+    companyWebsite: "https://www.uncia.ai/",
+    startDate: "2021-08-12",
+    endDate: null, // null = currently working
+    duration: calculateDuration("2021-08-12"),
+    responsibilities: [
+      {
+        title: "Full-Stack Web Development",
+        description:
+          "Developed and maintained enterprise Java web applications using Spring MVC, JSP, and MSSQL, serving thousands of users daily.",
+      },
+      {
+        title: "Database Optimization",
+        description:
+          "Designed complex MSSQL queries and stored procedures, achieving 30% faster response times through strategic indexing and query optimization.",
+      },
+      {
+        title: "API Development & Integration",
+        description:
+          "Built robust RESTful APIs and integrated 10+ third-party services including payment gateways, KYC verification, and credit scoring systems.",
+      },
+      {
+        title: "Frontend Enhancement",
+        description:
+          "Enhanced UI using JavaScript and jQuery, improving user experience and reducing load times by 25%.",
+      },
+      {
+        title: "Performance Tuning",
+        description:
+          "Conducted performance testing with JMeter, optimized caching strategies, and improved scalability.",
+      },
+    ],
+    achievements: [
+      "Reduced database query response time by 30%",
+      "Integrated 10+ third-party APIs securely",
+      "Improved app performance by 25%",
+      "Led migration of legacy codebase to modern architecture",
+    ],
+  } 
+];
 
 // Projects
 export const projects = [
-  {
+   {
     id: 1,
     title: "Home Loan Finance Web Application",
     category: "Enterprise Web Application",
-    description: "Comprehensive loan management system enabling customers to apply for home loans, track application status, and manage their loan lifecycle from application to disbursement.",
+    description:
+      "Comprehensive loan management system enabling customers to apply for home loans, track application status, and manage their loan lifecycle from application to disbursement.",
     
+    preview: "./projects/home-loan-preview.png", // 📸   preview image
+    live: "", // 🌍   live project link
+    source: "", // 💻   GitHub link
+
     keyFeatures: [
       "End-to-end loan application workflow with multi-step forms",
       "Real-time application status tracking with notifications",
@@ -144,16 +154,16 @@ export const projects = [
       "Credit score check integration with CIBIL",
       "Payment gateway integration for processing"
     ],
-    
+
     techStack: {
       backend: ["Java", "Spring MVC", "MSSQL"],
       frontend: ["JavaScript", "jQuery", "JSP", "HTML5", "CSS3"],
       server: ["Apache Tomcat"],
       integrations: ["TransUnion CIBIL", "Paytm", "Leegality"]
     },
-    
+
     impact: [
-      "Processed 10,000+ loan applications",
+      "Processed 10,000+ loan applications monthly",
       "Reduced application processing time by 40%",
       "Achieved 99.5% uptime",
       "Improved customer satisfaction score by 35%"
@@ -166,19 +176,105 @@ export const projects = [
       "Integrated third-party services for KYC and payments",
       "Conducted performance testing and optimization"
     ]
-  }
+  },
+  {
+  id: 2,
+  title: "LedgerMate - Offline Finance Tracker (PWA)",
+  category: "Personal Finance Web Application",
+  description:
+    "LedgerMate is an offline-first personal finance tracker that helps users manage daily income and expenses securely. Designed with a modern UI and smooth animations, it works seamlessly even without internet access.",
+
+  preview: "./projects/ledgermate-preview.png",  
+  live: "https://jeeventhiranv.github.io/LedgerMate", 
+  source: "https://github.com/JeeventhiranV/LedgerMate",  
+
+  keyFeatures: [
+    "Voice recognition for hands-free expense Addition",
+    "Offline data storage using IndexedDB (no cloud dependency)",
+    "Interactive charts powered by Chart.js for income/expense trends",
+    "Smooth animations and responsive design using Tailwind CSS",
+    "Category-based transaction management with filters",
+    "Export and import data functionality for backups",
+    "Progressive Web App (PWA) with install-on-device option",
+    "Dark and light theme support for better user experience"
+  ],
+
+  techStack: {
+    frontend: ["HTML5", "Tailwind CSS", "JavaScript", "Chart.js"],
+    backend: ["IndexedDB (Client-side Database)"],
+    architecture: ["PWA", "Service Workers"],
+    tools: ["Vite", "VS Code", "GitHub Pages"]
+  },
+
+  impact: [
+    "Empowered 10+ personal users to track finances offline",
+    "Zero data loss with persistent offline IndexedDB storage",
+    "Enhanced visualization for better financial insights",
+    "Achieved 100% offline functionality and PWA install support"
+  ],
+
+  responsibilities: [
+    "Developed the complete frontend and offline storage logic",
+    "Implemented IndexedDB for client-side persistence",
+    "Built interactive charts with Chart.js and dynamic data updates",
+    "Designed responsive layouts using Tailwind CSS",
+    "Integrated PWA service workers for offline and installable features",
+    "Optimized UI/UX with animations and accessibility enhancements"
+  ]
+},
+{
+  id: 3,
+  title: "Personal Portfolio Website - Jeeventhiran V",
+  category: "Personal Branding / Developer Portfolio",
+  description:
+    "A modern, interactive portfolio website built to showcase my professional journey, technical expertise, and projects. Designed with a clean architecture, seamless animations, and dynamic content management, it reflects my skills in React, TypeScript, and UI/UX design.",
+
+  preview: "./projects/portfolio-preview.png",  // 📸 replace with actual path in /public or /src/assets
+  live: "https://jeeventhiranv.github.io/Jeeventhiran",  // 🌍 your deployed site
+  source: "https://github.com/JeeventhiranV/Jeeventhiran",  // 💻 GitHub repo
+
+  keyFeatures: [
+    "Clean, scalable React + TypeScript architecture with modular components",
+    "Dynamic sections for About, Skills, Experience, Projects, and Contact",
+    "Editable data structure for easy content updates via JSON files",
+    "Dark/Light theme toggle with persistent user preference using Context API",
+    "Toast notifications for user interactions using React Hot Toast",
+      "Smooth scroll and section highlight navigation for polished UX",
+    "Animated transitions and scroll reveals using Framer Motion",
+    "Responsive and accessible design optimized for all devices"
+  ],
+
+  techStack: {
+    frontend: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    utilities: ["React Hot Toast", "React Hook Form", "Lucide Icons"],
+    deployment: ["GitHub Pages"],
+    tools: ["Vite", "VS Code", "Git", "GitHub"]
+  },
+
+  impact: [
+    "Created a personal digital identity showcasing projects and skills effectively",
+    "Improved recruiter engagement and visibility with an interactive portfolio design",
+    "Enhanced maintainability with modular, clean-architecture React structure",
+    "Built reusable UI components to accelerate future project development"
+  ],
+
+  responsibilities: [
+    "Architected the React-based application with reusable UI components",
+    "Implemented responsive, modern layouts using Tailwind CSS and Flex/Grid systems",
+    "Added interactive animations and transitions with Framer Motion",
+    "Developed dark/light theme persistence using React Context and localStorage",
+    "Integrated mail sending API for direct communication via contact form",
+    "Optimized build for GitHub Pages deployment with automated CI/CD setup",
+    "Ensured accessibility, performance optimization, and SEO enhancements"
+  ]
+}
+
+  
 ];
 
 // Awards & Recognition
 export const awards = [
-  {
-    id: 1,
-    title: "Emerging Champion of the Year",
-    organization: "Uncia Technologies Pvt. Ltd.",
-    year: "2023-2024",
-    description: "Recognized for exceptional problem-solving abilities, technical excellence, and outstanding contributions to critical projects.",
-    icon: "trophy"
-  },
+ 
   {
     id: 2,
     title: "Outstanding Rookie Award",
@@ -186,7 +282,16 @@ export const awards = [
     year: "2021-2022", 
     description: "Awarded for exceeding performance expectations during the first year, demonstrating quick learning and significant impact.",
     icon: "star"
+  },
+   {
+    id: 1,
+    title: "Emerging Champion of the Year",
+    organization: "Uncia Technologies Pvt. Ltd.",
+    year: "2023-2024",
+    description: "Recognized for exceptional problem-solving abilities, technical excellence, and outstanding contributions to critical projects.",
+    icon: "trophy"
   }
+ 
 ];
 
 // Education
@@ -253,35 +358,17 @@ export const currentActivities = [
 // Feed Activities - Daily Updates & Timeline
 // Activity types: "learning", "coding", "achievement", "work", "idea"
 export const feedActivities = [
-  {
+   {
     id: 1,
-    type: "learning",
-    title: "Exploring Microservices Architecture",
-    description: "Deep diving into Spring Boot microservices, Docker containerization, and Kubernetes orchestration. Building a sample project to understand service-to-service communication.",
-    date: "2025-10-28",
-    tags: ["Spring Boot", "Docker", "Kubernetes", "Microservices"],
-    link: "" // Optional: Add external link
-  },
+    type: "achievement",
+    title: "Received Emerging Champion Award 2023-24",
+    description: "Honored with Emerging Champion of the Year award for exceptional contributions and problem-solving abilities at Uncia Technologies.",
+    date: "2024-03-15",
+    tags: ["Award", "Recognition", "Career Milestone"],
+    link: ""
+  }, 
   {
     id: 2,
-    type: "coding",
-    title: "Building RESTful API with Spring Security",
-    description: "Implemented JWT-based authentication and role-based access control. Enhanced API security with custom filters and exception handling.",
-    date: "2025-10-25",
-    tags: ["Spring Security", "JWT", "REST API", "Java"],
-    link: ""
-  },
-  {
-    id: 3,
-    type: "achievement",
-    title: "Completed AWS Cloud Practitioner Course",
-    description: "Gained foundational knowledge of AWS services including EC2, S3, RDS, and Lambda. Understanding cloud architecture patterns and best practices.",
-    date: "2025-10-22",
-    tags: ["AWS", "Cloud Computing", "Certification"],
-    link: ""
-  },
-  {
-    id: 4,
     type: "work",
     title: "Optimized Database Query Performance",
     description: "Refactored complex MSSQL stored procedures and added proper indexing. Reduced query execution time by 40% for critical operations.",
@@ -290,41 +377,23 @@ export const feedActivities = [
     link: ""
   },
   {
-    id: 5,
+    id: 3,
     type: "idea",
     title: "Planning Personal Finance Tracker App",
     description: "Conceptualizing a full-stack application for expense tracking and budget management. Tech stack: Spring Boot, React, PostgreSQL.",
     date: "2025-10-18",
     tags: ["Project Idea", "Full Stack", "Spring Boot", "React"],
     link: ""
-  },
-  {
-    id: 6,
-    type: "learning",
-    title: "Learning React Hooks & Context API",
-    description: "Strengthening frontend skills by building modern React applications. Understanding useState, useEffect, useContext, and custom hooks.",
-    date: "2025-10-15",
-    tags: ["React", "JavaScript", "Frontend Development"],
-    link: ""
-  },
-  {
-    id: 7,
+  }, {
+    id: 4,
     type: "coding",
-    title: "Integrated Razorpay Payment Gateway",
-    description: "Successfully integrated Razorpay for secure payment processing in the home loan application. Implemented webhook for payment verification.",
-    date: "2025-10-12",
-    tags: ["Razorpay", "Payment Gateway", "Integration", "Java"],
+    title: "Building RESTful API with Spring Security",
+    description: "Implemented JWT-based authentication and role-based access control. Enhanced API security with custom filters and exception handling.",
+    date: "2025-10-25",
+    tags: ["Spring Security", "JWT", "REST API", "Java"],
     link: ""
-  },
-  {
-    id: 8,
-    type: "achievement",
-    title: "Received Emerging Champion Award 2023-24",
-    description: "Honored with Emerging Champion of the Year award for exceptional contributions and problem-solving abilities at Uncia Technologies.",
-    date: "2024-03-15",
-    tags: ["Award", "Recognition", "Career Milestone"],
-    link: ""
-  }
+  }  
+ 
 ];
 
 // SEO Meta Data

@@ -24,3 +24,19 @@ export const calculateExperience = (): string => {
   }
   return `${months} month${months > 1 ? "s" : ""}`;
 };
+export function calculateDuration(startDate: string | Date, endDate: string | Date = new Date()) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  const yearText = years > 0 ? `${years} yr${years > 1 ? "s" : ""}` : "";
+  const monthText = months > 0 ? `${months} mo${months > 1 ? "s" : ""}` : "";
+  return `${yearText}${yearText && monthText ? " " : ""}${monthText}` || "Less than a month";
+}

@@ -36,7 +36,7 @@ export function Awards() {
 
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {awards.map((award, index) => {
+            {awards.reverse().map((award, index) => {
               const Icon = iconMap[award.icon as keyof typeof iconMap] || Trophy;
               
               return (
