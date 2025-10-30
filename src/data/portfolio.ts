@@ -159,7 +159,7 @@ export const projects = [
       backend: ["Java", "Spring MVC", "MSSQL"],
       frontend: ["JavaScript", "jQuery", "JSP", "HTML5", "CSS3"],
       server: ["Apache Tomcat"],
-      integrations: ["TransUnion CIBIL", "Paytm", "Leegality"]
+      integrations: ["TransUnion CIBIL", "Paytm", "Leegality","Karza","Hunter","Perfious","Penydrop","Esign","Highmark","BRE"]
     },
 
     impact: [
