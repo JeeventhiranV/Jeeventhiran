@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Save the current URL path before redirecting to index.html
+      const redirect = sessionStorage.redirect || location.pathname;
+      // Clean it up to prevent infinite loops
+      delete sessionStorage.redirect;
+      // Redirect to the main app while preserving route
+      location.replace(
+        location.protocol + "//" + location.host + "/Jeeventhiran/" + "#" + redirect
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
