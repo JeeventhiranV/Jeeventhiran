@@ -7,12 +7,13 @@
 import { motion } from 'framer-motion';
 import { personalInfo, experience } from '@/data/portfolio';
 import { Code2, Database, Layers, Zap } from 'lucide-react';
+import { calculateExperience } from '@/lib/utils';
 
 // Highlight cards data
 const highlights = [
   {
     icon: Code2,
-    title: "3.5+ Years",
+    title: calculateExperience(),
     description: "Professional Experience"
   },
   {

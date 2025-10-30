@@ -185,7 +185,7 @@ export function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder="Jeevanthiran V"
                       required
                       className="w-full"
                     />
@@ -202,7 +202,7 @@ export function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="vjeeventhiran01@gmail.com"
                       required
                       className="w-full"
                     />

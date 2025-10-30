@@ -51,9 +51,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="text-center text-sm text-muted-foreground">
             <p className="flex items-center justify-center gap-1">
-              © {currentYear} {personalInfo.name}. Built with 
-              <Heart className="h-4 w-4 text-red-500 fill-red-500 inline-block" />
-              using React & Tailwind CSS
+              © {currentYear} {personalInfo.name}.
             </p>
           </div>
         </div>

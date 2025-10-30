@@ -4,16 +4,17 @@
  * This file contains all the data for the portfolio website.
  * Edit this file to update content without touching component code.
  */
-
-// Personal Information
+// ---- Experience Calculation Function ----
+import { calculateExperience } from "../lib/utils";
+// Personal Information 
 export const personalInfo = {
   name: "JEEVENTHIRAN V",
   title: "Java Full Stack Web Developer",
   location: "Chennai, Tamil Nadu, India",
   email: "vjeeventhiran01@gmail.com",
   tagline: "Building scalable and efficient Java-based web solutions.",
-  about: "Passionate Java Full Stack Developer with 3.5+ years of experience in building enterprise-level web applications. Specialized in Spring MVC, MSSQL, and modern frontend technologies. Committed to delivering high-performance solutions with clean architecture and optimal user experience.",
-  
+  about: "Passionate Java Full Stack Web Developer with "+calculateExperience()+" of experience in building enterprise-level web applications. Specialized in Spring MVC, MSSQL, and modern frontend technologies. Committed to delivering high-performance solutions with clean architecture and optimal user experience.",
+
   // Profile Photo Path (replace with your own photo in src/assets/)
   profilePhoto: "/src/assets/profile-photo.jpg",
   
@@ -88,9 +89,9 @@ export const experience = {
   company: "Uncia Technologies Pvt. Ltd.",
   role: "Java Developer",
   duration: "August 2021 - Present",
-  yearsOfExperience: "4+ years",
+  yearsOfExperience: calculateExperience(),
   location: "Chennai, Tamil Nadu",
-  
+  companyWebsite: "https://www.uncia.com",
   responsibilities: [
     {
       title: "Full-Stack Development",
@@ -243,8 +244,8 @@ export const currentActivities = [
   {
     id: 4,
     status: "completed",
-    title: "4+ Years Milestone",
-    description: "Completed 4+ years of professional experience at Uncia Technologies",
+    title: calculateExperience()+" Milestone",
+    description: "Completed "+calculateExperience()+" of professional experience at Uncia Technologies",
     date: "2024"
   }
 ];
@@ -329,7 +330,7 @@ export const feedActivities = [
 // SEO Meta Data
 export const seoData = {
   title: "Jeeventhiran V - Java Full Stack Web Developer | Chennai",
-  description: "Experienced Java Full Stack Web Developer specializing in Spring MVC, MSSQL, and enterprise web applications. 4+ years building scalable solutions in Chennai.",
+  description: "Experienced Java Full Stack Web Developer specializing in Spring MVC, MSSQL, and enterprise web applications. "+calculateExperience()+" building scalable solutions in Chennai.",
   keywords: "Java Developer, Full Stack Developer, Spring MVC, MSSQL, Chennai, Web Development, RESTful APIs, Jeeventhiran V",
   author: "Jeeventhiran V",
   ogImage: "/og-image.jpg"
