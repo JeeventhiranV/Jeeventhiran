@@ -2,7 +2,7 @@
 
 A modern, animated **React + Vite + Tailwind CSS + Framer Motion** personal portfolio website showcasing projects, skills, and experience — designed with a sleek UI, realistic live animations, and smooth interactions.
 
-🔗 **Live Demo:** [https://jeeenthiranv.github.io/Jeeventhiran](https://jeeenthiranv.github.io/Jeeventhiran)
+🔗 **Live Demo:** [https://jeeventhiranv.github.io/Jeeventhiran](https://jeeventhiranv.github.io/Jeeventhiran/)
 📂 **GitHub Repo:** [https://github.com/JeeventhiranV/Jeeventhiran](https://github.com/JeeventhiranV/Jeeventhiran)
 
 ---
