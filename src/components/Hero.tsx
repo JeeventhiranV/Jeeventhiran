@@ -169,7 +169,7 @@ export function Hero() {
               size="lg"
               variant="outline"
               onClick={handleDownloadResume}
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth group"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth group hidden"
             >
               <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-smooth" />
               Download Resume
