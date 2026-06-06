@@ -30,7 +30,7 @@ export function Projects() {
         </motion.div>
 
         <div className="max-w-6xl mx-auto space-y-12">
-          {projects.reverse().map((project, index) => (
+          {[...projects].reverse().map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}

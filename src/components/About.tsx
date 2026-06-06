@@ -6,7 +6,7 @@
 
 import { motion } from 'framer-motion';
 import { personalInfo, experiences } from '@/data/portfolio';
-import { Code2, Database, Layers, Zap } from 'lucide-react';
+import { Code2, Building2, ShieldCheck, Zap } from 'lucide-react';
 import { calculateExperience } from '@/lib/utils';
 const currentExperience =
   experiences.find((exp) => !exp.endDate) ||
@@ -19,19 +19,19 @@ const highlights = [
     description: "Professional Experience"
   },
   {
-    icon: Database,
-    title: "Enterprise Scale",
-    description: "Production Applications"
+    icon: Building2,
+    title: "BFSI Domain",
+    description: "Banking & Finance Expert"
   },
   {
-    icon: Layers,
-    title: "Full Stack",
-    description: "Java & Web Technologies"
+    icon: ShieldCheck,
+    title: "Security First",
+    description: "AES-256 & JWT / RBAC"
   },
   {
     icon: Zap,
-    title: "Performance",
-    description: "30% Query Optimization"
+    title: "30% Faster",
+    description: "SQL & Backend Optimization"
   }
 ];
 

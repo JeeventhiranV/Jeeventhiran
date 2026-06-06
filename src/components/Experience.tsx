@@ -22,7 +22,7 @@ export function Experience() {
         </motion.div>
 
         <div className="max-w-5xl mx-auto flex flex-col gap-10">
-          {experiences.reverse().map((exp, idx) => (
+          {[...experiences].reverse().map((exp, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}

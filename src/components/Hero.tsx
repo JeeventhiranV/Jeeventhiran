@@ -169,11 +169,31 @@ export function Hero() {
               size="lg"
               variant="outline"
               onClick={handleDownloadResume}
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth group hidden"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth group"
             >
               <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-smooth" />
               Download Resume
             </Button>
+          </motion.div>
+
+          {/* Recruiter-facing metrics */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto"
+          >
+            {[
+              { value: "4.5+", label: "Years Experience" },
+              { value: "10K+", label: "Loans / Month" },
+              { value: "30%", label: "Performance Boost" },
+              { value: "10+", label: "API Integrations" },
+            ].map((stat, i) => (
+              <div key={i} className="glass rounded-xl p-4 text-center border border-primary/20 hover:border-primary/50 transition-smooth">
+                <div className="text-2xl font-bold text-gradient">{stat.value}</div>
+                <div className="text-xs text-muted-foreground mt-1 font-medium">{stat.label}</div>
+              </div>
+            ))}
           </motion.div>
 
           {/* Scroll indicator */}
